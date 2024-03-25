@@ -43,7 +43,16 @@ function styles() {
 
 function images() {
   return src("app/images/src/**/*")
-    .pipe(imagemin({ progressive: true }))
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 80, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+        }),
+      ])
+    )
     .pipe(dest("dist/images/src/"))
     .pipe(browserSync.stream());
 }
