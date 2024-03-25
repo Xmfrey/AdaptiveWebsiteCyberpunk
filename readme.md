@@ -1,4 +1,4 @@
-Open by https://xmfrey.github.io/AdaptiveWebsitePCBuild/.
+Open by https://xmfrey.github.io/AdaptiveWebsiteCyberpunk/.
 
 1. app - source files;
 2. dist - final build by Gulp (command 'gulp build' in PowerShell at the root of the project);
